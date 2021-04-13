@@ -1,6 +1,6 @@
-# Linear.app clone with React & TailwindCss 
+# Linear.app clone with React & Tailwind CSS
 
-A clone of [Linear app](https://linear.app/) made with React & [TailwindCSS](http://tailwindcss.com/)
+A clone of [Linear app](https://linear.app/) made with React & [Tailwind CSS](http://tailwindcss.com/)
 
 
 ## Video Demo 
