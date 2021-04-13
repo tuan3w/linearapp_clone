@@ -1,0 +1,3 @@
+export const LOADED_ISSUES = 'LOADED_ISSUES';
+export const UPDATED_ISSUE = 'UPDATED_ISSUE';
+export const CREATED_ISSUE = 'CREATED_ISSUE';
