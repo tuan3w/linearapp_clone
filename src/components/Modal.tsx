@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, RefObject, useRef } from 'react';
+import React, { MouseEventHandler, RefObject, useCallback, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 
@@ -27,7 +27,7 @@ function Modal({ title, isOpen, center, size, className, onDismiss, children }: 
     const outerRef = useRef(null);
 
     const wrapperClasses = classnames(
-        'fixed flex flex-col items-center inset-0 z-50',
+            'fixed flex flex-col items-center inset-0 z-50',
         {
             'justify-center': center,
         }
@@ -39,16 +39,20 @@ function Modal({ title, isOpen, center, size, className, onDismiss, children }: 
         },
         sizeClasses[size],
         className
-    )
+    );
+    const handleClick = useCallback((e)=>{
+        if (!onDismiss)  return;
+        if (ref.current && !ref.current.contains(e.target)) {
+            onDismiss();
+        }
+    }, []);
 
     useLockBodyScroll();
-    useClickOutside(ref, () => {
-        if (isOpen && onDismiss)
-            onDismiss();
-    }, outerRef);
 
     let modal = (
-        <div ref={outerRef}>
+        <div ref={outerRef}
+            onClick={handleClick}
+        >
             <Transition
                 show={isOpen}
                 enter="transition ease-out duration-100"
