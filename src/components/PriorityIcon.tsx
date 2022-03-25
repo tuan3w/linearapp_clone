@@ -8,27 +8,22 @@ import React from 'react';
 import { Priority } from 'types/issue';
 
 interface Props {
-    priority: string;
-    className?: string;
+  priority: string;
+  className?: string;
 }
 
 const ICONS = {
-    [Priority.HIGH]: SignalStrongIcon,
-    [Priority.MEDIUM]: SignalMediumIcon,
-    [Priority.LOW]: SignalWeakIcon,
-    [Priority.URGENT]: SignalUrgentIcon,
-    [Priority.NO_PRIORITY]: SignalNoPriorityIcon,
-}
+  [Priority.HIGH]: SignalStrongIcon,
+  [Priority.MEDIUM]: SignalMediumIcon,
+  [Priority.LOW]: SignalWeakIcon,
+  [Priority.URGENT]: SignalUrgentIcon,
+  [Priority.NO_PRIORITY]: SignalNoPriorityIcon,
+};
 
 export default function PriorityIcon({ priority, className }: Props) {
-    let classes = classNames(
-        'w-3.5 h-3.5 rounded',
-        className
-    );
+  let classes = classNames('w-3.5 h-3.5 rounded', className);
 
-    let Icon = ICONS[priority];
+  let Icon = ICONS[priority];
 
-    return (
-        <Icon className={classes} />
-    );
+  return <Icon className={classes} />;
 }

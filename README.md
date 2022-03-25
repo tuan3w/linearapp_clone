@@ -9,8 +9,8 @@ A clone of [Linear app](https://linear.app/) made with React & [Tailwind CSS](ht
 ## Setup & Run
 
 ```bash
-$ npm install
-$ npm start
+$ yarn install
+$ yarn start
 ```
 
 ## Note
